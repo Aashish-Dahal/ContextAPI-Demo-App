@@ -5,7 +5,27 @@ import GradientButton from '../GradientButton';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Image
+          style={styles.logo}
+          resizeMode="stretch"
+          source={require('../../../assets/images/logo.png')}></Image>
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.title}>Stay Connected with everyone!</Text>
+        <Text style={styles.text}>Sign in with Account</Text>
+        <View style={styles.button}>
+          <GradientButton
+            onPress={() => navigation.navigate('LoginScreen')}
+            text="Get Started"
+            style={styles.signIn}
+            icon="navigate-next"></GradientButton>
+        </View>
+      </View>
+    </View>
+  );
 };
 const {height} = Dimensions.get('screen');
 const logo_height = height * 0.28;
