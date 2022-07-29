@@ -8,7 +8,21 @@ import RegisterScreen from './RegisterScreen';
 
 const Stack = createNativeStackNavigator();
 const RootNativeStackScreen = () => {
- 
+  const [isLoading, setIsLoading] = useState(true);
+  const [userToken, setUserToken] = useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+  if (isLoading) {
+    return (
+      <view style={styles.indicator}>
+        <ActivityIndicator size="large" />
+      </view>
+    );
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator>
