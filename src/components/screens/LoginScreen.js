@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Button from '../Button';
 import GradientButton from '../GradientButton';
 import InputField from '../InputField';
 import {useNavigation} from '@react-navigation/native';
+import {AuthContext} from '../context/context';
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const {signIn} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -27,7 +29,11 @@ const LoginScreen = () => {
             Forgot password?
           </Text>
         </TouchableOpacity>
-        <GradientButton style={styles.signIn} text="Sign In" />
+        <GradientButton
+          style={styles.signIn}
+          text="Sign In"
+          onPress={() => signIn()}
+        />
         <Button
           text="Sign Up"
           onPress={() => navigation.navigate('RegisterScreen')}
@@ -90,6 +96,11 @@ export const styles = StyleSheet.create({
   },
   color_textPrivate: {
     color: 'grey',
+  },
+  indicator: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 export default LoginScreen;
