@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, TouchableOpacity} from 'react-native';
-import { styles } from '../screens/LoginScreen';
-const Button = ({text,onPress}) => {
+import {Text, TouchableOpacity} from 'react-native';
+import {styles} from '../components/screens/LoginScreen';
+const Button = ({text, onPress}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -15,7 +15,7 @@ const Button = ({text,onPress}) => {
       ]}>
       <Text
         style={[
-         styles.textSign,
+          styles.textSign,
           {
             color: '#009387',
           },
