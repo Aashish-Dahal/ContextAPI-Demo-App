@@ -7,7 +7,34 @@ import {useNavigation} from '@react-navigation/native';
 const LoginScreen = () => {
   const navigation = useNavigation();
 
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.text_header}>Welcome Back</Text>
+        <Text style={styles.text}>Login to your account</Text>
+      </View>
+      <View style={styles.footer}>
+        <InputField icon="email-outline" hintText="Email address" />
+        <InputField icon="lock-outline" hintText="Password" />
+        <TouchableOpacity>
+          <Text
+            style={{
+              color: '#009387',
+              marginTop: 10,
+              fontWeight: 'bold',
+              marginBottom: 10,
+            }}>
+            Forgot password?
+          </Text>
+        </TouchableOpacity>
+        <GradientButton style={styles.signIn} text="Sign In" />
+        <Button
+          text="Sign Up"
+          onPress={() => navigation.navigate('RegisterScreen')}
+        />
+      </View>
+    </View>
+  );
 };
 export const styles = StyleSheet.create({
   container: {
