@@ -1,9 +1,8 @@
 import React from 'react';
-
-import RootStackScreen from './src/screens/RootNativeStackScreen';
+import RootNativeStackScreen from './src/components/screens/RootNativeStackScreen';
 
 const App = () => {
-  return <RootStackScreen />;
+  return <RootNativeStackScreen />;
 };
 
 export default App;
